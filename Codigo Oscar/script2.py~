@@ -1,6 +1,9 @@
 #!/usr/bin/python
 import os
 
+
+
+
 print ("Cluster de 4 nodos 1 core cada uno")
 
 cores_m = 4

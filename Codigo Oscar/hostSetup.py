@@ -2,9 +2,8 @@ from sys import argv
 
 filename = ".mpi_hostfile"
 
-
 line1 = "localhost slots="+str(argv[1])
-line2 = "kevin@192.168.0.33 slots=" + str(argv[2])
+line2 = "mpiuser@192.168.0.100 slots=" + str(argv[2])
 #line3 = "curso@172.19.12.175 slots=" + str(argv[3])
 #line4 = "curso@172.19.12.57 slots=" + str(argv[4])
 

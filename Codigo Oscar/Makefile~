@@ -1,0 +1,12 @@
+CC = mpicxx
+ouput = interpreter
+
+main:			
+		$(CC) -o $(ouput) conBanco.cpp -lfreeimage -fopenmp		
+
+clean:		
+		rm $(ouput)
+
+
+
+
