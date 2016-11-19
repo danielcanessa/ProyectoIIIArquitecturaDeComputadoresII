@@ -1,0 +1,17 @@
+Objetivos de las pruebas:
+
+1-Ver el comportamiento del hyperthreading 
+(Empezar con 2 cores en cada compu, luego 3,
+ luego 4, y luego 5(todas con 1cpu por hyperthreding) etc )
+
+2- Analizar el ping de una maquina a otra
+ para medir la capacidad de envio y asi indica porque no lo 
+hicimos de la forma que enviamos la fila
+
+3- Ver como el calculo de pi si mejor
+
+Se debe obtener pruebas con distintos 
+cores y tambn con el objetivo de ver la grafica
+ asintotica(segun canessa) cuando se usa el 
+hyperthreading(supuestamente la mejora es muy poca)
+

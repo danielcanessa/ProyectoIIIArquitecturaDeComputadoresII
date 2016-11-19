@@ -110,6 +110,7 @@ int ProcesarMatrices(int numworkers) {
     for (dest = 1; dest <= numworkers; dest++) {
         rows = (dest <= extra) ? averow + 1 : averow;
        // printf("rows:%d\n", rows);
+        //int MPI_Send(void *buf, int count, MPI_Datatype datatype,int dest, int tag, MPI_Comm comm)
         MPI_Send(&rows, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD); //send the rows to WORKER
     }
     int ready = 0;
@@ -117,6 +118,7 @@ int ProcesarMatrices(int numworkers) {
     /* wait for results from all worker processes */
     mtype = FROM_WORKER;
     for (dest = 1; dest <= numworkers; dest++) {
+        //int MPI_Recv(void *buf, int count, MPI_Datatype datatype,int source, int tag, MPI_Comm comm, MPI_Status *status)
         MPI_Recv(&ready, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD, &status); //receive the offset from WORKER
     }
 
@@ -128,6 +130,7 @@ int WorkerProcesses(int rank) {
     int source = MASTER;
     int rows = 0;
     int mtype = FROM_MASTER;
+    //int MPI_Recv(void *buf, int count, MPI_Datatype datatype,int source, int tag, MPI_Comm comm, MPI_Status *status)
     MPI_Recv(&rows, 1, MPI_INT, source, mtype, MPI_COMM_WORLD, &status); //receive the offset
 
 
@@ -138,6 +141,7 @@ int WorkerProcesses(int rank) {
 
     int ready = 1;
     mtype = FROM_WORKER;
+    //int MPI_Send(void *buf, int count, MPI_Datatype datatype,int dest, int tag, MPI_Comm comm)
     MPI_Send(&ready, 1, MPI_INT, MASTER, mtype, MPI_COMM_WORLD); //send the offset to MASTER
 }
 
